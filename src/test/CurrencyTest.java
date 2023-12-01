@@ -1,8 +1,8 @@
 package test;
 
-import currencyConverter.Currency;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import currencyConverter.Currency;
 
 public class CurrencyTest {
     @Test
