@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import currencyConverter.Currency;
 
 public class CurrencyTest {
+
+    // -------------BLACK BOX TESTS-------------
     @Test
     public void testConvertCorrect() {
         Double validValues[] = { 0.0, 500000.0, 999999.0 };
@@ -22,4 +24,5 @@ public class CurrencyTest {
             assertNotEquals(i * 0.67, Currency.convert(i, 0.67), 0.00001);
         }
     }
+    // -----------------------------------------
 }
