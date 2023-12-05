@@ -7,11 +7,19 @@ import currencyConverter.Currency;
 public class CurrencyTest {
     @Test
     public void testConvertCorrect() {
-        assertEquals(67.0, Currency.convert(100.0, 0.67), 0.00001);
+        Double validValues[] = { 0.0, 500000.0, 999999.0 };
+
+        for (Double i : validValues) {
+            assertEquals(i * 0.67, Currency.convert(i, 0.67), 0.00001);
+        }
     }
 
     @Test
     public void testConvertFalse() {
-        assertNotEquals(50, Currency.convert(100.0, 0.25), 0.00001);
+        Double invalidValues[] = { -9000.0, -1.0, 1000001.0, 1500000.0 };
+
+        for (Double i : invalidValues) {
+            assertNotEquals(i * 0.67, Currency.convert(i, 0.67), 0.00001);
+        }
     }
 }
