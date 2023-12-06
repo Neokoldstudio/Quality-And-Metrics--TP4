@@ -40,7 +40,7 @@ public class MainWindowTest {
         Double validValues[] = { 1.0, 500000.0, 999999.0 };
 
         for (Double i : validValues) {
-            assertNotEquals(i * 0.60, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
+            assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
         }
     }
 
@@ -49,7 +49,21 @@ public class MainWindowTest {
         Double invalidValues[] = { -9000.0, -1.0, 1000001.0, 1500000.0 };
 
         for (Double i : invalidValues) {
-            assertNotEquals(i * 0.93, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
+            assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
+        }
+    }
+    // -----------WHITE BOX TESTS---------------
+
+    @Test
+    public void TestFlowControlChart() { // tests all the branches in the flow control chart
+        String currencies1[] = { "US Dollar", "Australian Dollar", "Euro" };
+        String currencies2[] = { "US Dollar", "US Dollar", "Australian Dollar" };
+
+        for (int i = 0; i < currencies1.length; i++) {
+            if (i == 0)
+                assertNotEquals(0.0, MainWindow.convert(currencies1[i], currencies2[i], currencies, 100.0), 0.00001);
+            else
+                assertEquals(0.0, MainWindow.convert(currencies1[i], currencies2[i], currencies, 100.0), 0.00001);
         }
     }
     // -----------------------------------------

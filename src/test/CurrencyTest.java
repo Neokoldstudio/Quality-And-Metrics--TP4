@@ -24,5 +24,6 @@ public class CurrencyTest {
             assertNotEquals(i * 0.67, Currency.convert(i, 0.67), 0.00001);
         }
     }
+    // -----------WHITE BOX TESTS---------------
     // -----------------------------------------
 }
