@@ -1,4 +1,4 @@
-package test;
+package currencyConverter;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
