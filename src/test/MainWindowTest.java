@@ -66,6 +66,20 @@ public class MainWindowTest {
                 assertEquals(0.0, MainWindow.convert(currencies1[i], currencies2[i], currencies, 100.0), 0.00001);
         }
     }
+
+    @Test
+    public void TestLoops() {// test all the loops values
+        String testCurrencies[] = { "US Dollar", "Euro", "British Pound", "Swiss Franc", "Chinese Yuan Renminbi",
+                "Japanese Yen", "Dummy" };
+
+        for (String i : testCurrencies) {// first loop test
+            assertNotEquals(-1.0, MainWindow.convert("US Dollar", i, currencies, 100.0), 0.00001);
+        }
+
+        for (String i : testCurrencies) {// second loop test
+            assertNotEquals(-1.0, MainWindow.convert(i, "US Dollar", currencies, 100.0), 0.00001);
+        }
+    }
     // -----------------------------------------
 
     @After
