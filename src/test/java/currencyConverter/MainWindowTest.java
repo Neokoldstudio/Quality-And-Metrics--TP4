@@ -70,13 +70,9 @@ public class MainWindowTest {
     // }
 
     // Test conversion for each pair in 'currencies'
-    
     @Test
     public void TestInstructionsCoverage()
     {
-
-        // ArrayList<Currency> new_currencies = currencies;
-        // new_currencies.add(new Currency("Brazilian Real", "BRL"));
 
         for(Currency i : currencies) {
             for(Currency j : currencies) {
@@ -85,6 +81,41 @@ public class MainWindowTest {
 
         }
     }
+
+    @Test
+    public void TestEdgesCoverageFirstIf()
+    {
+
+        String incorrect = "Brazilian Real";
+
+        for(Currency i : currencies) {
+            assertEquals(0.0, MainWindow.convert(i.getName(), incorrect, currencies, 100.0), 0.0001); 
+        }
+
+    }
+
+    @Test
+    public void TestEdgesCoverageSecondIf()
+    {
+
+        String incorrect = "Brazilian Real";
+
+        for(Currency i : currencies) {
+            assertEquals(0.0, MainWindow.convert(incorrect, i.getName(), currencies, 100.0), 0.0001); 
+        }
+
+    }
+
+    @Test
+    public void TestEdgesCoverageBothIfs()
+    {
+
+        String incorrect = "Brazilian Real";
+
+        assertEquals(0.0, MainWindow.convert(incorrect, incorrect, currencies, 100.0), 0.0001); 
+
+    }
+
 
     @Test
     public void TestLoops() { // test all the loops values
