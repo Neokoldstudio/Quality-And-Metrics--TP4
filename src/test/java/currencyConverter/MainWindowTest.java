@@ -83,7 +83,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoverageFirstIf()
+    public void TestEdgesCoveragelIf180()
     {
 
         String incorrect = "Brazilian Real";
@@ -95,7 +95,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoverageSecondIf()
+    public void TestEdgesCoverageIf189()
     {
 
         String incorrect = "Brazilian Real";
@@ -116,18 +116,31 @@ public class MainWindowTest {
 
     }
 
+    @Test
+    public void TestEdgesCoverageIf187()
+    {
+
+        assertEquals(0.0, MainWindow.convert("US Dollar", null, currencies, 100.0), 0.0001); 
+
+    }
+
+    
+    @Test
+    public void TestPathsLoop1() { // test all the loops values
+
+        for (Currency i: currencies) { // first loop test
+            assertNotEquals(0.0, MainWindow.convert(i.getName(), "US Dollar", currencies, 100.0), 0.00001);
+        }
+
+    }
 
     @Test
-    public void TestLoops() { // test all the loops values
-        String[] testCurrencies = { "US Dollar", "Euro", "British Pound", "Swiss Franc", "Chinese Yuan Renminbi", "Japanese Yen", "Dummy" };
+    public void TestPathsLoop2() { // test all the loops values
 
-        for (String i : testCurrencies) { // first loop test
-            assertNotEquals(-1.0, MainWindow.convert("US Dollar", i, currencies, 100.0), 0.00001);
+        for (Currency i: currencies) { // first loop test
+            assertNotEquals(0.0, MainWindow.convert("US Dollar", i.getName(), currencies, 100.0), 0.00001);
         }
 
-        for (String i : testCurrencies) { // second loop test
-            assertNotEquals(-1.0, MainWindow.convert(i, "US Dollar", currencies, 100.0), 0.00001);
-        }
     }
     // -----------------------------------------
 
