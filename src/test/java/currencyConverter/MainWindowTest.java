@@ -17,57 +17,43 @@ public class MainWindowTest {
     }
 
     // -------------BLACK BOX TESTS-------------
-    // @Test
-    // public void testConvertCorrectCurrCorrectValues() {
-    //     Double[] validValues = { 0.0, 500000.0, 999999.0 };
+    @Test
+    public void testConvertCorrectCurrCorrectValues() {
+        Double[] validValues = { 0.0, 500000.0, 999999.0 };
 
-    //     for (Double i : validValues) {
-    //         assertEquals(i * 0.93, MainWindow.convert("US Dollar", "Euro", currencies, i), 0.00001);
-    //     }
-    // }
+        for (Double i : validValues) {
+            assertEquals(i * 0.93, MainWindow.convert("US Dollar", "Euro", currencies, i), 0.00001);
+        }
+    }
 
-    // @Test
-    // public void testConvertCorrectCurrWrongValues() {
-    //     Double[] invalidValues = { -9000.0, -1.0, 1000001.0, 1500000.0 };
+    @Test
+    public void testConvertCorrectCurrWrongValues() {
+        Double[] invalidValues = { -9000.0, -1.0, 1000001.0, 1500000.0 };
 
-    //     for (Double i : invalidValues) {
-    //         assertNotEquals(i * 0.93, MainWindow.convert("US Dollar", "Euro", currencies, i), 0.00001);
-    //     }
-    // }
+        for (Double i : invalidValues) {
+            assertNotEquals(i * 0.93, MainWindow.convert("US Dollar", "Euro", currencies, i), 0.00001);
+        }
+    }
 
-    // @Test
-    // public void testConvertWrongCurrCorrectValues() {
-    //     Double[] validValues = { 1.0, 500000.0, 999999.0 };
+    @Test
+    public void testConvertWrongCurrCorrectValues() {
+        Double[] validValues = { 1.0, 500000.0, 999999.0 };
 
-    //     for (Double i : validValues) {
-    //         assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
-    //     }
-    // }
+        for (Double i : validValues) {
+            assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
+        }
+    }
 
-    // @Test
-    // public void testConvertWrongCurrWrongValues() {
-    //     Double[] invalidValues = { -9000.0, -1.0, 1000001.0, 1500000.0 };
+    @Test
+    public void testConvertWrongCurrWrongValues() {
+        Double[] invalidValues = { -9000.0, -1.0, 1000001.0, 1500000.0 };
 
-    //     for (Double i : invalidValues) {
-    //         assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
-    //     }
-    // }
+        for (Double i : invalidValues) {
+            assertEquals(0.0, MainWindow.convert("Australian Dollar", "Euro", currencies, i), 0.00001);
+        }
+    }
+
     // -----------WHITE BOX TESTS---------------
-
-    // @Test
-    // public void TestFlowControlChart() { // tests all the branches in the flow control chart
-
-    //     ArrayList<Currency> new_currencies = currencies;
-
-    //     new_currencies.add(new Currency("Brazilian Real", "BRL"));
-
-    //     for (int i = 0; i < currencies1.length; i++) {
-    //         if (i == 0)
-    //             assertNotEquals(0.0, MainWindow.convert(currencies1[i], currencies2[i], currencies, 100.0), 0.00001);
-    //         else
-    //             assertEquals(0.0, MainWindow.convert(currencies1[i], currencies2[i], currencies, 100.0), 0.00001);
-    //     }
-    // }
 
     // Test conversion for each pair in 'currencies'
     @Test
