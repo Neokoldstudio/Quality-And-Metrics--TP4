@@ -18,10 +18,13 @@ public class CurrencyTest {
 
     @Test
     public void testConvertFalse() {
-        Double[] invalidValues = { -9000.0, -1.0, 1000001.0, 1500000.0 };
+        Double invalidValues[] = { -9000.0, -1.0, 1000001.0, 1500000.0 };
 
         for (Double i : invalidValues) {
-            assertThrows(RuntimeException.class, () -> Currency.convert(i, 0.67));
+            assertThrows(RuntimeException.class, () -> {
+                Currency.convert(i, 0.67);
+            });
+            // assertNotEquals(i * 0.67, Currency.convert(i, 0.67), 0.00001);
         }
     }
  }
