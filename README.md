@@ -16,6 +16,7 @@ To execute the tests, follow these simple steps:
 2. Navigate to the project's root directory.
 3. Run the following command:
    ```sh
+   mvn package 
    mvn test
    ```
 4. The test results will be displayed in the terminal. Additionally, they are saved in text files located at `target/surefire-reports/` for further analysis and record-keeping.
