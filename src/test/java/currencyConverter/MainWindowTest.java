@@ -83,7 +83,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoveragelIf180()
+    public void TestBranchCoveragelIf180()
     {
 
         String incorrect = "Brazilian Real";
@@ -95,7 +95,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoverageIf189()
+    public void TestBranchCoverageIf189()
     {
 
         String incorrect = "Brazilian Real";
@@ -107,7 +107,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoverageBothIfs()
+    public void TestBranchCoverageBothIfs()
     {
 
         String incorrect = "Brazilian Real";
@@ -117,7 +117,7 @@ public class MainWindowTest {
     }
 
     @Test
-    public void TestEdgesCoverageIf187()
+    public void TestBranchCoverageIf187()
     {
 
         assertEquals(0.0, MainWindow.convert("US Dollar", null, currencies, 100.0), 0.0001); 
